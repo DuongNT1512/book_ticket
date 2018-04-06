@@ -1,0 +1,20 @@
+language: ruby
+dist: trusty
+group: stable
+os: linux
+
+before_install:
+    - gem install scss_lint
+    - npm install eslint -g
+
+install:
+    - bundle install --with framgia --without production
+
+script:
+    - bundle-audit check --update
+    - brakeman
+    - reek
+    - rubocop --require rubocop/formatter/checkstyle_formatter --format RuboCop::Formatter::CheckstyleFormatter --no-color --rails app/ lib/
+    - scss-lint --require=scss_lint_reporter_checkstyle --format=Checkstyle app/assets/stylesheets/
+    - eslint --format=checkstyle app/
+    - rails_best_practices -c .rails_best_practices.yml -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb" app/
