@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="form-sidebar">
+    <%= render "shared/quick_purchase" %>
+  </div>
+  <div class="sidebar-movie-items">
+    <% for movie in movies do %>
+      <%= render "shared/movie_item", movie: movie %>
+    <% end %>
+  </div>
+</div>

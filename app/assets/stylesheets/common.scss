@@ -1,4 +1,5 @@
 @import 'material-design-color';
+@import 'custom_color';
 
 // header
 .navbar-default .navbar-brand {
@@ -54,3 +55,134 @@
   }
 }
 // footer
+
+// index
+.image-slider {
+  padding-bottom: 20px;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .image-container {
+    display: inline-block;
+    position: relative;
+  }
+
+  .float-right {
+    height: 30%;
+    margin: -15% 0 0 -25%;
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    width: 25%;
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.movie-thumbnail {
+  display: table;
+  position: relative;
+
+  .link-no-decoration {
+    &:hover,
+    &:visited,
+    &:link {
+      text-decoration: none;
+    }
+  }
+
+  .overlay {
+    background-color: $transparent-black;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 500ms;
+    width: 100%;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .movie-description {
+      color: $grey-50;
+      font-size: 15px;
+      height: 80%;
+      left: 0;
+      overflow: hidden;
+      padding: 10px 20px;
+      top: 0;
+    }
+
+    .ticket-button {
+      bottom: 2%;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.movie-item {
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .movie-title {
+    .title,
+    .vietnamese-title {
+      margin-left: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.article-image {
+  padding-top: 10px;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.link-btn {
+  background-color: $amber-900;
+  color: $grey-50;
+  display: inline-block;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+
+  &:visited,
+  &:link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $orange-900;
+    color: $grey-900;
+    text-decoration: none;
+  }
+}
+// index
+
+// sidebar
+.form-sidebar {
+  margin-top: 30px;
+}
+
+.sidebar-movie-items {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+// sidebar

@@ -23,7 +23,30 @@ vi:
       events: "Sự Kiên"
       connect_us: "Kết nối với chúng tôi"
       copyright: "© 2018 Bản Quyền AwesomeCinema "
-
+  home_pages:
+    index:
+      show_more: "Xem Thêm"
+      reviews: "Bình Luận Phim"
+      blogs: "Blog Điện Ảnh"
+    contact:
+      contact_us: "Liên Hệ Với Chúng Tôi"
+    about:
+      about_us: "Về Chúng Tôi"
+    help:
+      help: "Hỗ Trợ"
+    article_item:
+      views: "Lượt xem:"
+  shared:
+    movie_item:
+      book_now: "Mua Ngay"
+      rated: "Rated"
+    quick_purchase:
+      title: "Mua Vé Nhanh"
+      movie: "Chọn Phim"
+      date: "Chọn Ngày"
+      theater: "Chọn Rạp"
+      show: "Chọn Xuất"
+      book: "Mua Vé"
   application_title: "Awesome Cinema"
   english: "EN"
   vietnamese: "VI"

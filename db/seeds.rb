@@ -39,7 +39,7 @@ for movie_name in movie_names
 end
 
 # Theater seeds
-for i in 1..3
+for i in 1..5
   Theater.create! name: Faker::Company.name, description:
     Faker::Lorem.paragraph(50), address: Faker::Address.street_address
 end

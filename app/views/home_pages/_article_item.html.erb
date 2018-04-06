@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-5 article-image">
+    <%= link_to image_tag("http://via.placeholder.com/280x360"), "#" %>
+  </div>
+  <div class="col-xs-7">
+    <h4 class="article-title"><%= Faker::Lorem.sentence 20 %></h4>
+    <div class="row">
+      <div class="col-xs-7">
+        <iframe
+          src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=122&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId"
+          height="20" style="border:none;overflow:hidden"
+          scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </div>
+      <div class="col-xs-5">
+        <p class="text-right"><%= t ".views" %> <span><%= Faker::Number.number 3 %></span></p>
+      </div>
+    </div>
+    <p class="article-preview"><%= Faker::Lorem.paragraph 50 %></p>
+  </div>
+</div>

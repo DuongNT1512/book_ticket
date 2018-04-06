@@ -16,4 +16,6 @@ class Movie < ApplicationRecord
   validates :description, length: {maximum: Settings.movie.max_desc}
   validates :status, presence: true, inclusion: {in: statuses.keys}
   validates :rate, presence: true, inclusion: {in: rates.keys}
+
+  scope :latest_order, ->{order release_date: :desc}
 end

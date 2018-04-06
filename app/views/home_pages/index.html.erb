@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12 image-slider">
+    <div class="image-container">
+      <div class="float-right">
+        <%= render "shared/quick_purchase" %>
+      </div>
+      <%= link_to image_tag("http://via.placeholder.com/1200x480"), "#" %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% for movie in first_n_movies(Settings.movie.movie_index) do %>
+    <div class="col-md-4 col-xs-6">
+      <%= render "shared/movie_item", movie: movie %>
+    </div>
+  <% end %>
+</div>
+<% if more_than?(Settings.movie.movie_index) %>
+  <div class="row text-right">
+    <%= link_to t(".show_more"), "#", class: "link-btn " %>
+  </div>
+<% end %>
+<div class="row">
+  <div class="col-md-6 col-xs-12 article-section">
+    <h2><%= t ".reviews" %></h2>
+    <%= render "article_item" %>
+  </div>
+  <div class="col-md-6 col-xs-12 article-section">
+    <h2><%= t ".blogs" %></h2>
+    <%= render "article_item" %>
+  </div>
+  </div>
+</div>

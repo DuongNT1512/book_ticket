@@ -20,6 +20,8 @@ movie:
     - :PG-13
     - :R
     - :NC-17
+  movie_index: 6
+  movie_sidebar: 3
 
 genre:
   max_name: 20
