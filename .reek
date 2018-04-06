@@ -4,3 +4,7 @@ IrresponsibleModule:
 exclude_paths:
   - 'vendor'
   - 'db/migrate'
+
+UtilityFunction:
+  exclude:
+    - "ApplicationController#default_url_options"

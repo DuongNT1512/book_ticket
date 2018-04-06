@@ -1,0 +1,29 @@
+vi:
+  layouts:
+    header:
+      menu: "MENU"
+      brand_name: "Awesome Cinema"
+      book_ticket: "Đặt Vé"
+      movies: "Phim"
+      now_playing: "Đang Chiếu"
+      coming_soon: "Sắp Chiếu"
+      articles: "Bài Viết"
+      theaters: "Rạp Phim"
+      contact: "Liên Hệ"
+      help: "Trợ Giúp"
+      login: "Đăng Nhập"
+    footer:
+      intro: "Về Chúng Tôi"
+      contact: "Liên Hệ"
+      help: "Hỗ Trợ"
+      about: "Về Chúng Tôi"
+      awesome_blog: "Bài Viết"
+      news: "Tin Tức Phim"
+      reviews: "Review Phim"
+      events: "Sự Kiên"
+      connect_us: "Kết nối với chúng tôi"
+      copyright: "© 2018 Bản Quyền AwesomeCinema "
+
+  application_title: "Awesome Cinema"
+  english: "EN"
+  vietnamese: "VI"
