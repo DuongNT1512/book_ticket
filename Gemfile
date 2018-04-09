@@ -14,6 +14,10 @@ gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
+gem "bootstrap-sass", "~> 3.3.7"
+gem "font-awesome-rails", "~> 4.7.0"
+gem "jquery-rails", "~> 4.3.1"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"

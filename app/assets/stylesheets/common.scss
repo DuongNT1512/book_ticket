@@ -1,0 +1,56 @@
+@import 'material-design-color';
+
+// header
+.navbar-default .navbar-brand {
+  color: $orange-600;
+
+  &:hover,
+  &:focus {
+    background-color: $grey-800;
+    color: $blue-grey-50;
+  }
+}
+// header
+
+// footer
+.footer {
+  background-color: $grey-900;
+  color: $blue-grey-50;
+  margin-top: 20px;
+  text-align: center;
+
+  .footer-copyright {
+    background-color: $grey-800;
+    padding: 3px;
+
+    p {
+      color: $red-50;
+      margin: 10px;
+    }
+  }
+
+  .connect > a {
+    color: $grey-50;
+    font-size: 32px;
+    padding: 25px;
+  }
+
+  ul {
+    line-height: 1.7;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  h5 {
+    color: $yellow-50;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  a {
+    color: $grey-200;
+    text-decoration: none;
+  }
+}
+// footer

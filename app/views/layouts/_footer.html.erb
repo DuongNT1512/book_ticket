@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 myCols">
+        <h5><%= t ".about" %></h5>
+        <ul>
+          <li><%= link_to t(".contact"), contact_path %></li>
+          <li><%= link_to t(".help"), help_path %></li>
+          <li><%= link_to t(".about"), about_path %></li>
+        </ul>
+      </div>
+      <div class="col-sm-4 myCols">
+        <h5><%= t ".awesome_blog" %></h5>
+        <ul>
+          <li><%= link_to t(".news"), "#" %></li>
+          <li><%= link_to t(".reviews"), "#" %></li>
+          <li><%= link_to t(".events"), "#" %></li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h5><%= t ".connect_us" %></h5>
+        <div class="connect">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook">
+            <i class="fa fa-facebook-official"></i></a>
+          <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright"><p><%= t ".copyright" %></p></div>
+</footer>
