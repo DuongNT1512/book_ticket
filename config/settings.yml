@@ -1,0 +1,35 @@
+movie:
+  max_name: 100
+  min_length: 20
+  max_length: 600
+  max_desc: 5000
+  languages:
+    - :en
+    - :vi
+    - :kr
+    - :jp
+    - :ru
+    - :cn
+  status:
+    - :pending
+    - :airing
+    - :archived
+  rates:
+    - :G
+    - :PG
+    - :PG-13
+    - :R
+    - :NC-17
+
+genre:
+  max_name: 20
+
+theater:
+  max_name: 100
+  max_desc: 5000
+
+screen:
+  max_name: 80
+  max_desc: 5000
+  min_seat: 20
+  max_seat: 500

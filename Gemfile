@@ -15,6 +15,8 @@ gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
 gem "bootstrap-sass", "~> 3.3.7"
+gem "config", "~> 1.7.0"
+gem "faker", "~> 1.8.7"
 gem "font-awesome-rails", "~> 4.7.0"
 gem "jquery-rails", "~> 4.3.1"
 
