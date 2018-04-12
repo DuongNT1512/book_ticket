@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2><%= t ".about_us" %></h2>
+    <div class="page-content">
+      <p><%= Faker::Lorem.paragraph 30 %></p>
+      <p><%= Faker::Lorem.paragraph 40 %></p>
+      <p><%= Faker::Lorem.paragraph 50 %></p>
+      <p><%= Faker::Lorem.paragraph 40 %></p>
+      <p><%= Faker::Lorem.paragraph 30 %></p>
+    </div>
+  </div>
+  <div class="col-md-4 hidden-in-xs">
+    <%= render "shared/side_bar", movies: first_n_movies(Settings.movie.movie_sidebar) %>
+  </div>
+</div>

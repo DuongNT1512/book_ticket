@@ -7,4 +7,6 @@ class Show < ApplicationRecord
   validates :end, presence: true
   validates :movie, presence: true
   validates :screen, presence: true
+
+  scope :today, ->{where("start >= ?", Time.zone.now)}
 end

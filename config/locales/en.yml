@@ -23,7 +23,30 @@ en:
       events: "Events"
       connect_us: "Connect with Us"
       copyright: "© 2018 Copyright AwesomeCinema "
-
+  home_pages:
+    index:
+      show_more: "Show More"
+      reviews: "Movie Review"
+      blogs: "Movie Blog"
+    contact:
+      contact_us: "Contact Us"
+    about:
+      about_us: "About Us"
+    help:
+      help: "Help"
+    article_item:
+      views: "Views:"
+  shared:
+    movie_item:
+      book_now: "Book Now"
+      rated: "Rated"
+    quick_purchase:
+      title: "Quick Ticket Purchase"
+      movie: "Select Movie"
+      date: "Select Date"
+      theater: "Select Theater"
+      show: "Select Show"
+      book: "Book"
   application_title: "Awesome Cinema"
   english: "EN"
   vietnamese: "VI"

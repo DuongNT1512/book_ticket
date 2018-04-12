@@ -1,0 +1,23 @@
+<div class="movie-item">
+  <div class="movie-thumbnail">
+    <%= image_tag("http://via.placeholder.com/360x240") %>
+    <%= link_to "#", class: "link-no-decoration" do %>
+      <div class="overlay">
+        <p class="movie-description"><%= movie.description %></p>
+        <div class="ticket-button">
+          <%= link_to t(".book_now"), "#", class: "link-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row movie-title">
+    <div class="col-xs-9">
+      <h4><p class="title"><%= movie.name %></p></h4>
+      <h4><p class="vietnamese-title"><%= movie.vietnamese %></p></h4>
+    </div>
+    <div class="col-xs-3 text-center">
+      <h4 style="margin-bottom: 0;"><%= movie.rate %></h4>
+      <h6 style="margin-top: 0;"><%= t ".rated" %></h6>
+    </div>
+  </div>
+</div>
