@@ -4,9 +4,14 @@ class Screen < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.screen.max_name}
   validates :description, length: {maximum: Settings.screen.max_desc}
-  validates :seat, presence: true,
+  validates :seat_rows, presence: true,
     numericality: {only_integer: true, greater_than_or_equal_to:
                    Settings.screen.min_seat, less_than_or_equal_to:
                    Settings.screen.max_seat}
+  validates :seat_columns, presence: true,
+    numericality: {only_integer: true, greater_than_or_equal_to:
+                   Settings.screen.min_seat, less_than_or_equal_to:
+                   Settings.screen.max_seat}
+  validates :layout, presence: true
   validates :theater, presence: true
 end

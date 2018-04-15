@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :set_locale
+  before_action :set_locale, :new_user, :airing_movies
+  before_action :configure_devise_permitted_params, if: :devise_controller?
 
   private
 
@@ -11,5 +12,19 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def new_user
+    @user = User.new unless signed_in?
+  end
+
+  def airing_movies
+    @movies = Movie.joins(:shows).merge(Show.today).airing.latest_order.uniq
+  end
+
+  def configure_devise_permitted_params
+    devise_parameter_sanitizer.permit :sign_up,
+      keys: %i(username email password password_confirmation first_name
+               last_name birthday gender address)
   end
 end

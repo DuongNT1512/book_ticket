@@ -1,7 +1,6 @@
 @import 'material-design-color';
 @import 'custom_color';
 
-// header
 .navbar-default .navbar-brand {
   color: $orange-600;
 
@@ -11,9 +10,7 @@
     color: $blue-grey-50;
   }
 }
-// header
 
-// footer
 .footer {
   background-color: $grey-900;
   color: $blue-grey-50;
@@ -84,17 +81,17 @@
   }
 }
 
+.link-no-decoration {
+  &:hover,
+  &:visited,
+  &:link {
+    text-decoration: none;
+  }
+}
+
 .movie-thumbnail {
   display: table;
   position: relative;
-
-  .link-no-decoration {
-    &:hover,
-    &:visited,
-    &:link {
-      text-decoration: none;
-    }
-  }
 
   .overlay {
     background-color: $transparent-black;
@@ -186,3 +183,61 @@
   margin-top: 30px;
 }
 // sidebar
+
+// login form
+.login-modal {
+  background-color: $transparent-black;
+}
+
+.login-wrapper {
+  margin: auto;
+  max-width: 520px;
+  width: 80%;
+}
+
+.login-header {
+  font-size: 21px;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+
+  li {
+    float: left;
+  }
+
+  .login-separator {
+    color: $grey-500;
+    margin: 0 5px;
+  }
+
+  a {
+    color: $grey-700;
+  }
+
+  .active {
+    color: $orange-600;
+  }
+}
+
+.signup-errors {
+  color: $red-400;
+  margin: 0;
+  padding-top: 3px;
+}
+
+.signin-errors {
+  margin-top: 10px;
+}
+
+.signin-helper-links {
+  margin-left: 15px;
+}
+
+.devise-submit {
+  margin: 10px 0 20px;
+}
+
+.edit-form {
+  padding: 0 50px 0 20px;
+}

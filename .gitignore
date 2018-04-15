@@ -32,6 +32,7 @@
 /.directory
 /tags
 /gem.tags
+*.vim
 
 config/settings.local.yml
 config/settings/*.local.yml

@@ -33,5 +33,16 @@ theater:
 screen:
   max_name: 80
   max_desc: 5000
-  min_seat: 20
-  max_seat: 500
+  min_seat: 5
+  max_seat: 50
+
+user:
+  max_first: 50
+  max_last: 100
+  genders:
+    - :male
+    - :female
+    - :other
+  roles:
+    - :user
+    - :admin
