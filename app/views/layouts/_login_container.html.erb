@@ -1,0 +1,28 @@
+<div class="modal fade" id="login-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <ul class="login-header">
+          <li><%= link_to t(".signin"), "#", id: "modal-signin",
+            class: "modal-title link-no-decoration active" %> </li>
+          <li class="login-separator"> / </li>
+          <li><%= link_to t(".signup"), "#", id: "modal-signup",
+            class: "modal-title link-no-decoration" %></li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="login-wrapper">
+            <div id="signin-tab">
+              <%= render "layouts/signin_form", user: user %>
+            </div>
+            <div id="signup-tab" class="no-display">
+              <%= render "layouts/signup_form", user: user %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

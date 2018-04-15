@@ -14,6 +14,9 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
+      <%= render "layouts/flash_alerts" unless flash.empty? %>
+      <%= render "layouts/login_container",
+        user: @user unless user_signed_in? %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

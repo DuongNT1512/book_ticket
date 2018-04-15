@@ -4,7 +4,8 @@
     "jquery": true
   },
   "globals": {
-    "window": true
+    "window": true,
+    "$clamp": true
   },
 
   "extends": "eslint:recommended",
