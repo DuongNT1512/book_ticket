@@ -15,4 +15,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require clamp
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.vi.js
 //= require_tree .

@@ -58,12 +58,17 @@ for i in 1..1000
   show.movie = Movie.all[Random.new.rand(Movie.all.count)]
   show.screen = Screen.all[Random.new.rand(Screen.all.count)]
   show.date = Faker::Date.between(10.days.ago, 10.days.from_now)
-  show.start = Faker::Time.between(show.date.to_date, show.date.to_date +
+  show.start_time = Faker::Time.between(show.date.to_date, show.date.to_date +
                                    23.hours)
-  show.end = show.start + show.movie.length.minutes
+  show.end_time = show.start_time + show.movie.length.minutes
 
-  if show.end < Date.today && :archived == show.movie.status
+  if show.end_time < Date.today && :archived == show.movie.status
     show.disabled = true
   end
   show.save!
 end
+
+# Admin seed
+User.create! email: "root@awesome.com", password: "123456789",
+  password_confirmation: "123456789", first_name: "admin", last_name: "admin",
+  gender: :other, role: :admin, confirmed_at: Time.zone.now

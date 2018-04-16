@@ -14,11 +14,14 @@ gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
+gem "bootstrap-datepicker-rails", "~> 1.8.0"
 gem "bootstrap-sass", "~> 3.3.7"
 gem "config", "~> 1.7.0"
+gem "devise", "~> 4.4.3"
 gem "faker", "~> 1.8.7"
 gem "font-awesome-rails", "~> 4.7.0"
 gem "jquery-rails", "~> 4.3.1"
+gem "rails-i18n", "~> 5.1"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
