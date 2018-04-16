@@ -49,9 +49,15 @@ class OrdersController < ApplicationController
 
   def find_movie_show
     @movie_show = Show.find_by id: params[:show_id]
+    return if movie_show
+    flash[:error] = t ".show_not_found"
+    redirect_to root_path
   end
 
   def find_order
     @order = Order.find_by id: params[:id]
+    return if order
+    flash[:error] = t ".order_not_found"
+    redirect_to root_path
   end
 end

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4 movie-image">
+        <%= image_tag @movie.thumbnail %>
+      </div>
+      <div class="col-md-8 movie-details">
+        <h3><%= @movie.name %></h3>
+        <h4><%= @movie.vietnamese %></h4>
+        <div class="movie-info"><b><%= t ".rated" %></b>:
+          <span class="movie-rate"><%= @movie.rate %></span></div>
+        <div class="movie-info"><b><%= t ".genres" %></b>:
+          <%= render_genres %></div>
+        <div class="movie-info"><b><%= t ".length" %></b>:
+          <%= @movie.length %> minutes</div>
+        <div class="movie-info"><b><%= t ".director" %></b>:
+          <%= @movie.directors %></div>
+        <div class="movie-info"><b><%= t ".actor" %></b>:
+          <%= @movie.actors %></div>
+        <div class="movie-info"><b><%= t ".release_date" %></b>:
+          <%= render_release_date %></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="movie-description">
+        <div class="title"><h3><b><%= t ".movie_description" %></b></h3></div>
+        <div class="description"><%= @movie.description %></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 hidden-in-xs">
+    <%= render "shared/side_bar", form_movies: @movies,
+      movies: first_n_movies(Settings.movie.movie_sidebar) %>
+  </div>
+</div>

@@ -97,6 +97,7 @@ vi:
       seat: "Ghế"
       price: "Giá"
       confirm: "Đặt Vé"
+      show_not_found: "Không Tìm Thấy Xuất Chiếu"
     show:
       title: "Thông Tin Đặt Vé"
       movie_name: "Tên Phim"
@@ -116,17 +117,35 @@ vi:
       cancel_order: "Hủy Đơn"
       okay: "Xác Nhận"
       usd: "USD"
+      order_not_found: "Không Tìm Thấy Đơn Hàng"
     create:
       reserved: "Bạn đã đăt vé thành công! Bạn có thể xem thông tin như bên dưới"
       confirm: "Xác Nhận"
+      show_not_found: "Không Tìm Thấy Xuất Chiếu"
     destroy:
       cancelled: "Bạn đã hủy vé thành công!"
+      order_not_found: "Không Tìm Thấy Đơn Hàng"
   payments:
     create:
       paid: "Mua vé thành công!"
+  movies:
+    show:
+      rated: "Rated"
+      genres: "Thể Loại"
+      length: "Thời Gian"
+      director: "Đạo Diễn"
+      actor: "Diễn Viên"
+      release_date: "Ngày Phát Hành"
+      movie_description: "Thông Tin Phim"
+      movie_not_found: "Không Tìm Thấy Phim. Vui Lòng Thử Lại"
+    index:
+      playing_movies: "Phim Đang Chiếu"
+      coming_movies: "Phim Sắp Chiếu"
+    movie_item:
+      book_now: "Xem Chi Tiết"
   shared:
     movie_item:
-      book_now: "Mua Ngay"
+      book_now: "Xem Phim"
       rated: "Rated"
     quick_purchase:
       title: "Mua Vé Nhanh"

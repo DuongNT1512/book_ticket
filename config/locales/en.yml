@@ -97,6 +97,7 @@ en:
       seat: "Seat"
       price: "Price"
       confirm: "Book Ticket"
+      show_not_found: "Show Not Found"
     show:
       title: "Order Details"
       movie_name: "Movie Name"
@@ -116,14 +117,32 @@ en:
       cancel_order: "Cancel Order"
       okay: "Okay"
       usd: "USD"
+      order_not_found: "Order Not Found!!"
     create:
       reserved: "Your order has been reserved! You can see the details as below"
       confirm: "Comfirm"
+      show_not_found: "Show Not Found"
     destroy:
       cancelled: "Your order has been cancelled!"
+      order_not_found: "Order Not Found!!"
   payments:
     create:
       paid: "Order purchase successfully!"
+  movies:
+    show:
+      rated: "Rated"
+      genres: "Genres"
+      length: "Length"
+      director: "Director"
+      actor: "Actors"
+      release_date: "Release Date"
+      movie_description: "Movie Description"
+      movie_not_found: "Movie Not Found!! Try again"
+    index:
+      playing_movies: "Playing Movies"
+      coming_movies: "Coming Movies"
+    movie_item:
+      book_now: "Show Detail"
   shared:
     movie_item:
       book_now: "Show Movie"

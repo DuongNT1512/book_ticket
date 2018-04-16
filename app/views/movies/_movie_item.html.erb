@@ -1,6 +1,6 @@
-<div class="movie-item">
+<div class="movie-index-item">
   <div class="movie-thumbnail">
-    <%= image_tag movie.thumbnail, class: "movie-item-thumbnail" %>
+    <%= image_tag movie.thumbnail, class: "movie-index-thumbnail" %>
     <%= link_to "#", class: "link-no-decoration" do %>
       <div class="overlay">
         <p class="movie-description"><%= movie.description %></p>
@@ -11,12 +11,12 @@
     <% end %>
   </div>
   <div class="row movie-title">
-    <div class="col-xs-9 title-wrapper">
+    <div class="col-xs-9">
       <h4 class="title"><%= movie.name %></h4>
     </div>
     <div class="col-xs-3 text-center">
       <h4 class="movie-rate"><%= movie.rate %></h4>
-      <h6 class="rate-text"><%= t ".rated" %></h6>
+      <h6 class="rated-text"><%= t ".rated" %></h6>
     </div>
   </div>
 </div>

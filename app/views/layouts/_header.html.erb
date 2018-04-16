@@ -20,8 +20,8 @@
             <%= t ".movies" %> <span class="carret"></span>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to t(".now_playing"), "#" %></li>
-            <li><%= link_to t(".coming_soon"), "#" %></li>
+            <li><%= link_to t(".now_playing"), movies_path %></li>
+            <li><%= link_to t(".coming_soon"), movies_path(coming_movies: true) %></li>
           </ul>
         </li>
         <li><%= link_to t(".articles"), "#" %></li>
