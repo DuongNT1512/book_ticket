@@ -23,5 +23,6 @@ Rails.application.routes.draw do
 
     resources :shows, only: :index
     resources :theaters, only: :index
+    resources :orders, only: :new
   end
 end

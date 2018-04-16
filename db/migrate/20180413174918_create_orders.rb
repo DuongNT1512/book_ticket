@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.float :amount, null: false
       t.integer :status, null: false
       t.belongs_to :user, index: true
-      t.belongs_to :promotion, index: true
 
       t.timestamps
     end

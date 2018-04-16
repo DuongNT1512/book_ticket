@@ -1,0 +1,14 @@
+<% if hidden_seat? row, column %>
+  <li style="visibility:hidden;">
+    <div class="seat text-center"><%= column %></div>
+<% else %>
+  <li>
+    <% if reserved_seat? row, column %>
+      <div class="seat text-center reserved"
+        data-seat-code="<%= "#{row}:#{column}" %>"><%= column + 1 %></div>
+    <% else %>
+      <div class="seat text-center" data-seat-code="<%= "#{row}:#{column}" %>"
+        data-ticket-price="<%= show.ticket_price %>"><%= column %></div>
+    <% end %>
+<% end %>
+  </li>

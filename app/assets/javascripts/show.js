@@ -79,6 +79,9 @@ $(document).on('turbolinks:load', function(){
 
   $('#show-index').on('click', '.show-item', function(e){
     e.preventDefault();
+    var show_id = $(this).data('show-id');
+    var path = $('#show-panel input[name="order_new"]').val();
+    window.location.href = path + '/?show_id=' + show_id;
   });
 
   function render_theaters(theaters){

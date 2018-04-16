@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', function(){
   var ajax_theaters_url = $('#quick-purchase-form input[name="ajax_theaters"]').val();
   var ajax_shows_url = $('#quick-purchase-form input[name="ajax_shows"]').val();
+  var new_order_url = $('#quick-purchase-form input[name="new_order_path"]').val();
   var theater_default_option = $('#quick-purchase-form .theater').html();
   var date_default_option = $('#quick-purchase-form .date').html();
   var show_default_option = $('#quick-purchase-form .show').html();
-  var movie_id, theater_id, shows_by_dates, date_index;
+  var movie_id, theater_id, shows_by_dates, date_index, show_id;
   var theater_template = '<option value="{{:id}}" name="theater">{{:name}}</option>';
   var date_template = '<option value="{{:index}}" name="date">{{:date}}</option>';
   var show_template = '<option value="{{:id}}" name="show">{{:start}}</option>';
@@ -69,10 +70,12 @@ $(document).on('turbolinks:load', function(){
 
   $('#quick-purchase-form').on('change', '.show', function(e){
     e.preventDefault();
+    show_id = $(this).val();
   });
 
   $('#quick-purchase-form').on('submit', function(e){
     e.preventDefault();
+    window.location.href = new_order_url + '/?show_id=' + show_id;
   });
 
   function render_quick_purchase_theaters(theaters){
