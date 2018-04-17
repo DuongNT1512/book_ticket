@@ -125,3 +125,26 @@
   margin: 0;
   padding: 15px 10px;
 }
+
+.order-details {
+  font-size: 20px;
+  margin-top: 30px;
+
+  .order-detail {
+    font-size: 20px;
+  }
+
+  td {
+    line-height: 40px;
+    padding-right: 20px;
+  }
+}
+
+.payment {
+  margin-top: 30px;
+
+  a {
+    margin-left: 10px;
+    padding: 10px 30px;
+  }
+}

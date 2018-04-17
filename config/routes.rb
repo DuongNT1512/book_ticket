@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
     resources :shows, only: :index
     resources :theaters, only: :index
-    resources :orders, only: :new
+    resources :orders, only: %i(new create show destroy) do
+      resources :payments, only: :create
+    end
   end
 end

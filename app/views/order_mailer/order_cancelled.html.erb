@@ -1,0 +1,12 @@
+<h1><%= t ".title" %></h1>
+<hr>
+
+<p><%= t ".greeting" %> <%= @user.first_name %></p>
+
+<p><%= t ".notify" %></p>
+
+<p><%= t ".link_below" %></p>
+
+<%= link_to t(".order_link"), order_url(I18n.locale, @order) %>
+
+<p><%= t ".thank_you" %></p>

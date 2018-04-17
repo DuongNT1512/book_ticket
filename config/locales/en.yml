@@ -94,9 +94,36 @@ en:
       seat: "Seat"
       price: "Price"
       confirm: "Book Ticket"
+    show:
+      title: "Order Details"
+      movie_name: "Movie Name"
+      movie_genres: "Genres"
+      movie_length: "Length"
+      minutes: "minutes"
+      theater: "Theater"
+      screen: "Screen"
+      seat: "Seat"
+      start_time: "Start Time"
+      amount: "Total Amount"
+      status: "Order Status"
+      reserved: "Reserved"
+      cancelled: "Cancelled"
+      succeeded: "Purchased"
+      failed: "Failed"
+      cancel_order: "Cancel Order"
+      okay: "Okay"
+      usd: "USD"
+    create:
+      reserved: "Your order has been reserved! You can see the details as below"
+      confirm: "Comfirm"
+    destroy:
+      cancelled: "Your order has been cancelled!"
+  payments:
+    create:
+      paid: "Order purchase successfully!"
   shared:
     movie_item:
-      book_now: "Book Now"
+      book_now: "Show Movie"
       rated: "Rated"
     quick_purchase:
       title: "Quick Ticket Purchase"
@@ -165,6 +192,34 @@ en:
         title: "Resend unlock instructions"
         email: "Email"
         send_unlock: "Resend unlock instructions"
+  order_mailer:
+    send_notification_mail:
+      subject: "Ticket Notification"
+    order_reserved:
+      title: "Ticket Reservation Notification"
+      greeting: "Hello"
+      notify: "We're here to notify you that your tickets has been reserved."
+      link_below: "The detailed infomation is in the link below"
+      order_link: "Order Details"
+      thank_you: "Thank you for using AwesomeCinema service!"
+    order_cancelled:
+      title: "Ticket Cancellation Notification"
+      greeting: "Hello"
+      notify: "We're here to notify you that your tickets has been cancelled."
+      link_below: "The detailed infomation on the tickets is in the link below"
+      order_link: "Order Details"
+      thank_you: "Thank you for using AwesomeCinema service!"
+    order_purchased:
+      title: "Ticket Purchase Notification"
+      greeting: "Hello"
+      notify: "We're here to notify you that your tickets has been purchased successfully."
+      link_below: "The detailed infomation on the tickets is in the link below"
+      order_link: "Order Details"
+      thank_you: "Thank you for using AwesomeCinema service!"
   unexpected_error: "Unexpected Error! Try Again Later"
   not_in_the_past: "can't be in the past"
   not_before_start: "can't end before start"
+  order_signin_warning: "You need to sign in to book ticket"
+  payment_complete: "Payment Completed!"
+  payment_cancelled: "Payment Cancelled!"
+  payment_error: "Payment Error!"
