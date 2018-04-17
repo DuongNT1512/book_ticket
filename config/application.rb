@@ -14,6 +14,5 @@ module BookTicket
       Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}").to_s]
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :en
-
   end
 end

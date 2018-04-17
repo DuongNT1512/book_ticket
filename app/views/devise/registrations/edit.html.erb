@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2><%= t ".edit" %> <%= resource_name.to_s.humanize %></h2>
+
+    <div class="edit-form">
+      <%= form_for resource, url: user_registration_path do |f| %>
+        <div class="form-group row">
+          <div class="col-xs-12">
+            <%= f.label :email, t(".email") %>
+            <%= f.email_field :email, autofocus: true, class: "form-control",
+              id: "sign_up_email" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-6">
+            <%= f.label :password, t(".password") %>
+            <%= f.password_field :password, autocomplete: "off",
+              class: "form-control", id: "sign_up_password" %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= f.label :password_confirmation, t(".password_confirmation") %>
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+              class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-6">
+            <%= f.label :first_name, t(".first_name") %>
+            <%= f.text_field :first_name, class: "form-control" %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= f.label :last_name, t(".last_name") %>
+            <%= f.text_field :last_name, class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-6">
+            <%= f.label :birthday, t(".birthday") %>
+            <%= f.text_field :birthday, data: {provide: "datepicker"},
+              class: "form-control" %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= f.label :gender, t(".gender") %><br />
+            <%= f.select :gender, gender_selections, {},
+              {class: "form-control"} %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-12">
+            <%= f.label :address, t(".address") %>
+            <%= f.text_field :address, class: "form-control" %>
+          </div>
+        </div>
+        <%= f.submit t(".update_profile"),
+          class: "btn btn-primary", id: "signup-btn" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-4 hidden-in-xs">
+    <%= render "shared/side_bar",
+      movies: first_n_movies(Settings.movie.movie_sidebar) %>
+  </div>
+</div>

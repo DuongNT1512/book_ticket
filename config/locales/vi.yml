@@ -1,4 +1,10 @@
 vi:
+  application_title: "Awesome Cinema"
+  english: "EN"
+  vietnamese: "VI"
+  male: "Nam"
+  female: "Nữ"
+  other: "Khác"
   layouts:
     header:
       menu: "MENU"
@@ -8,10 +14,14 @@ vi:
       now_playing: "Đang Chiếu"
       coming_soon: "Sắp Chiếu"
       articles: "Bài Viết"
+      events: "Sự Kiện"
       theaters: "Rạp Phim"
       contact: "Liên Hệ"
       help: "Trợ Giúp"
       login: "Đăng Nhập"
+      account: "Tài Khoản"
+      profile: "Thông Tin"
+      logout: "Đăng Xuất"
     footer:
       intro: "Về Chúng Tôi"
       contact: "Liên Hệ"
@@ -20,9 +30,30 @@ vi:
       awesome_blog: "Bài Viết"
       news: "Tin Tức Phim"
       reviews: "Review Phim"
-      events: "Sự Kiên"
+      events: "Sự Kiện"
       connect_us: "Kết nối với chúng tôi"
       copyright: "© 2018 Bản Quyền AwesomeCinema "
+    login_container:
+      signin: "ĐĂNG NHẬP"
+      signup: "ĐĂNG KÝ"
+    signin_form:
+      email: "Email"
+      password: "Mật Khẩu"
+      remember_me: "Ghi Nhớ"
+      signin: "Đăng Nhập"
+      forgot_password: "Quên Mật Khẩu"
+      resend_confirmation: "Email Kích Hoạt"
+      unlock_account: "Mở Khóa TK"
+    signup_form:
+      email: "Email"
+      password: "Mật Khẩu"
+      password_confirmation: "Xác Nhận Mật Khẩu"
+      first_name: "Tên"
+      last_name: "Họ"
+      birthday: "Ngày Sinh"
+      gender: "Giới Tính"
+      address: "Địa Chỉ"
+      sign_up: "Đăng Kí"
   home_pages:
     index:
       show_more: "Xem Thêm"
@@ -47,6 +78,60 @@ vi:
       theater: "Chọn Rạp"
       show: "Chọn Xuất"
       book: "Mua Vé"
-  application_title: "Awesome Cinema"
-  english: "EN"
-  vietnamese: "VI"
+  devise:
+    confirmations:
+      new:
+        title: "Gửi Lại Email Kích Hoạt"
+        email: "Email"
+        resend_button: "Gửi Lại"
+    mailer:
+      confirmation_instructions:
+        welcome: "Chào Mừng"
+        confirmation_link: "Bạn có thể kích hoạt tài khoản bằng link dưới đây"
+        confirm: "Xác Nhận Tài Khoản"
+      email_changed:
+        hello: "Xin Chào"
+        changing_email_notification: "Chúng tôi liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành"
+        changed_email_notification: "Chúng tôi liên hệ với bạn để thông báo rằng email của bạn đã được thay đổi thành"
+      password_change:
+        hello: "Xin Chào"
+        password_change_notification: "Chúng tôi liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi thành công"
+      reset_password_instructions:
+        hello: "Xin Chào"
+        instruction: "Ai đó đã yêu cầu thay đổi mật khẩu. Bạn có thể thày đổi mật khẩu của mình bằng link dưới đây"
+        change_password: "Đổi Mật Khẩu"
+        if_not: "Nếu bạn không yêu cầu thay đổi mật khẩu, vui lòng bỏ qua email này"
+        assurance: "Mật khẩu của bạn sẽ không bị thay đổi cho đến khi bạn nhấn vào link bên trên và tạo một mật khẩu mới"
+      unlock_instructions:
+        hello: "Xin Chào"
+        lock_reason: "Tài khoản của bạn đã bị khóa do quá số lần đăng nhập không thành công"
+        instruction: "Nhấn vào link dưới đây để mở khóa tài khoản:"
+        unlock_account: "Mở Khóa Tài Khoản"
+    passwords:
+      edit:
+        title: "Thay Đổi Mật Khẩu"
+        new_password: "Mật Khẩu Mới"
+        password_confirmation: "Xác Nhận Mật Khẩu"
+        minimum_length: "kí tự tối thiểu"
+        change_password: "Thay Đổi"
+      new:
+        title: "Quên Mật Khẩu?"
+        email: "Email"
+        send_reset: "Xác Nhận"
+    registrations:
+      edit:
+        edit: "Thay đổi"
+        email: "Email"
+        password: "Mật Khẩu"
+        password_confirmation: "Xác Nhận Mật Khẩu"
+        first_name: "Tên"
+        last_name: "Họ"
+        birthday: "Ngày Sinh"
+        gender: "Giới Tính"
+        address: "Đại Chỉ"
+        update_profile: "Thay Đổi"
+    unlocks:
+      new:
+        title: "Gửi Yêu Cầu Mở Khóa Tài Khoản"
+        email: "Email"
+        send_unlock: "Gửi"

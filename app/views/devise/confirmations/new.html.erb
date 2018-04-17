@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2><%= t ".title" %></h2>
+
+    <%= form_for resource, as: resource_name,
+      url: confirmation_path(resource_name), html: {method: :post}  do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :email, t(".email") %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+          value: (resource.pending_reconfirmation? ? resource.unconfirmed_email
+                  : resource.email) %>
+      </div>
+
+      <div class="actions devise-submit">
+        <%= f.submit t(".resend_button") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4 hidden-in-xs">
+    <%= render "shared/side_bar",
+      movies: first_n_movies(Settings.movie.movie_sidebar) %>
+  </div>
+</div>

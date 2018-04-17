@@ -8,3 +8,6 @@ exclude_paths:
 UtilityFunction:
   exclude:
     - "ApplicationController#default_url_options"
+    - "ApplicationHelper#gender_selections"
+    - "ApplicationHelper#bootstrap_class_for"
+    - "ApplicationHelper#bootstrap_glyphs_icon"
