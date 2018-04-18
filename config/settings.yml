@@ -46,3 +46,14 @@ user:
   roles:
     - :user
     - :admin
+
+order:
+  status:
+    - pending
+    - reserved
+    - cancelled
+    - succeeded
+    - failed
+
+date_format: "%A, %e/%m/%Y"
+time_format: "%H:%M"
