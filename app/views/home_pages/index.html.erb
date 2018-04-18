@@ -2,7 +2,7 @@
   <div class="col-md-12 image-slider">
     <div class="image-container">
       <div class="float-right">
-        <%= render "shared/quick_purchase" %>
+        <%= render "shared/quick_purchase", movies: @movies %>
       </div>
       <%= link_to image_tag("http://via.placeholder.com/1200x480"), "#" %>
     </div>
