@@ -5,7 +5,8 @@
   },
   "globals": {
     "window": true,
-    "$clamp": true
+    "$clamp": true,
+    "I18n": true
   },
 
   "extends": "eslint:recommended",

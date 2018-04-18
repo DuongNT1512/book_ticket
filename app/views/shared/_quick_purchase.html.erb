@@ -1,25 +1,39 @@
-<%# FIXME: dummy form %>
-<form action="#" class="text-right">
+<form action="#" class="text-right" id="quick-purchase-form">
+  <input type="hidden" name="ajax_theaters" value="<%= ajax_theaters_path %>">
+  <input type="hidden" name="ajax_shows" value="<%= ajax_shows_path %>">
   <h3><%= t ".title" %></h3>
   <div class="form-group">
-    <select class="form-control">
+    <select class="form-control movie">
       <option value="" hidden selected><%= t ".movie" %></option>
+      <% for movie in movies %>
+        <option value="<%= movie.id %>" name="movie"><%= movie.name %></option>
+      <% end %>
     </select>
   </div>
   <div class="form-group">
-    <select class="form-control">
-      <option value="" hidden selected><%= t ".date" %></option>
-    </select>
-  </div>
-  <div class="form-group">
-    <select class="form-control">
+    <select class="form-control theater">
       <option value="" hidden selected><%= t ".theater" %></option>
     </select>
   </div>
   <div class="form-group">
-    <select class="form-control">
+    <select class="form-control date">
+      <option value="" hidden selected><%= t ".date" %></option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-control show">
       <option value="" hidden selected><%= t ".show" %></option>
     </select>
   </div>
   <button type="submit" class="btn btn-default"><%= t ".book" %></button>
 </form>
+
+<script id="theater-item-template" type="text/x-jsrender">
+  <option value="{{:id}}" name="theater">{{:name}}</option>
+</script>
+<script id="date-item-template" type="text/x-jsrender">
+  <option value="{{:index}}" name="date">{{:date}}</option>
+</script>
+<script id="show-item-template" type="text/x-jsrender">
+  <option value="{{:id}}" name="show"><%= t ".session" %>: {{:start}}</option>
+</script>

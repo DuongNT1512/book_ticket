@@ -17,7 +17,7 @@
     <% end %>
   </div>
   <div class="col-md-4 hidden-in-xs">
-    <%= render "shared/side_bar",
+    <%= render "shared/side_bar", form_movies: @movies,
       movies: first_n_movies(Settings.movie.movie_sidebar) %>
   </div>
 </div>
