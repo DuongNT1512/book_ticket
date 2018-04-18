@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(version: 20180413205514) do
 
   create_table "tickets", force: :cascade do |t|
     t.string "seat_code", null: false
-    t.float "price", null: false
     t.boolean "disabled", default: false
     t.integer "show_id"
     t.integer "order_id"

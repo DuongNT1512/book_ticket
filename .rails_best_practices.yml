@@ -26,7 +26,9 @@ RemoveTrailingWhitespaceCheck: { }
 RemoveUnusedMethodsInControllersCheck: { except_methods:
   [HomePagesController#index, HomePagesController#contact,
   HomePagesController#help, HomePagesController#about,
-  ConfirmationsController#after_confirmation_path_for] }
+  ConfirmationsController#after_confirmation_path_for, ShowsController#index,
+  TheatersController#index]
+}
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 RemoveUnusedMethodsInModelsCheck: { except_methods: [] }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }
