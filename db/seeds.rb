@@ -39,7 +39,7 @@ for movie_name in movie_names
 end
 
 # Theater seeds
-for i in 1..5
+for i in 1..20
   Theater.create! name: Faker::Company.name, description:
     Faker::Lorem.paragraph(50), address: Faker::Address.street_address
 end
@@ -47,20 +47,37 @@ end
 # Screen seeds
 for theater in Theater.all
   for i in 1..5
-    Screen.create! name: "IMAX Screen #{i}", description:
-      Faker::Lorem.paragraph(50), seat: 100, theater: theater
+    screen = Screen.new
+    screen.name = "IMAX Screen #{i}"
+    screen.description = Faker::Lorem.paragraph(50)
+    screen.seat_rows = 10
+    screen.seat_columns = 16
+    screen.layout = [
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [0,0,1,1,0,1,1,1,1,1,1,0,1,1,0,0],
+      [1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1],
+      [1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1],
+      [1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1],
+      [1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1]
+    ]
+    screen.theater = theater
+    screen.save!
   end
 end
 
 # Show seeds
-for i in 1..1000
+for i in 1..10000
   show = Show.new
   show.movie = Movie.all[Random.new.rand(Movie.all.count)]
   show.screen = Screen.all[Random.new.rand(Screen.all.count)]
+  show.ticket_price = 20
   show.date = Faker::Date.between(10.days.ago, 10.days.from_now)
-  show.start_time = Faker::Time.between(show.date.to_date, show.date.to_date +
-                                   23.hours)
-  show.end_time = show.start_time + show.movie.length.minutes
+  show.start_time = Faker::Time.between(show.date.to_date, show.date.to_date + 23.hours).getlocal
+  show.end_time =(show.start_time + show.movie.length.minutes).getlocal
 
   if show.end_time < Date.today && :archived == show.movie.status
     show.disabled = true
@@ -72,3 +89,13 @@ end
 User.create! email: "root@awesome.com", password: "123456789",
   password_confirmation: "123456789", first_name: "admin", last_name: "admin",
   gender: :other, role: :admin, confirmed_at: Time.zone.now
+
+# Promotion seed
+promotion = Promotion.new
+promotion.name = "Test Promotion"
+promotion.start_date =  Time.zone.today
+promotion.end_date = Time.zone.today + 60
+promotion.description = Faker::Lorem.paragraph 30
+promotion.discount_type = :percentage
+promotion.discount_value = 10
+promotion.save!

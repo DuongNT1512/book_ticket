@@ -20,5 +20,12 @@ Rails.application.routes.draw do
       patch "users", to: "users/registrations#update", as: nil
       delete "users", to: "users/registrations#destroy", as: nil
     end
+
+    resources :shows, only: :index
+
+    scope "/ajax" do
+      post "theaters", to: "ajax_theaters#index", as: :ajax_theaters
+      post "shows", to: "ajax_shows#index", as: :ajax_shows
+    end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412134107) do
+ActiveRecord::Schema.define(version: 20180413205514) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20180412134107) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_movies_on_name"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float "amount", null: false
+    t.integer "status", null: false
+    t.integer "user_id"
+    t.integer "promotion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["promotion_id"], name: "index_orders_on_promotion_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "screens", force: :cascade do |t|
@@ -81,6 +92,18 @@ ActiveRecord::Schema.define(version: 20180412134107) do
     t.boolean "disabled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "seat_code", null: false
+    t.float "price", null: false
+    t.boolean "disabled", default: false
+    t.integer "show_id"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_tickets_on_order_id"
+    t.index ["show_id"], name: "index_tickets_on_show_id"
   end
 
   create_table "users", force: :cascade do |t|
