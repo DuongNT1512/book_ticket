@@ -52,7 +52,8 @@
           <div class="col-md-6 pay-now paypal">
             <input type="hidden" id="order-amount" value="<%= @order.amount %>">
             <input type="hidden" id="order-id" value="<%= @order.id %>">
-            <input type="hidden" id="order-pay" value="<%= order_payments_path @order.id %>">
+            <input type="hidden" id="order-pay"
+              value="<%= order_payments_path @order.id %>">
             <div id="paypal-button"></div>
           </div>
         <% end %>

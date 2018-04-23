@@ -72,6 +72,11 @@
       width: 100%;
     }
   }
+
+  .movie-item-thumbnail {
+    max-height: 480px;
+    width: 360px;
+  }
 }
 
 .movie-item {

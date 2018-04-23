@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180413205514) do
     t.integer "status", null: false
     t.integer "rate", null: false
     t.boolean "disabled", default: false
+    t.string "thumbnail"
+    t.string "carousel"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_movies_on_name"

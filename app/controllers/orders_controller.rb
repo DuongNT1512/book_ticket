@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
   def destroy
     order.cancel
-    order.send_cancelled_email current_user
+    order.send_email :cancelled, current_user
     flash[:success] = t ".cancelled"
     redirect_to order_path(order)
   end
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
       Ticket.create! seat_code: code, show: movie_show, order: order
     end
     flash[:success] = t ".reserved"
-    order.send_reserved_email current_user
+    order.send_email :reserved, current_user
     render json: {status: "success", order: order.id}
   end
 

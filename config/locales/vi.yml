@@ -71,6 +71,9 @@ vi:
       help: "Hỗ Trợ"
     article_item:
       views: "Lượt xem:"
+    carousel:
+      next: "Tới"
+      previous: "Lui"
   shows:
     index:
       showtime: "Lịch Chiếu Phim"

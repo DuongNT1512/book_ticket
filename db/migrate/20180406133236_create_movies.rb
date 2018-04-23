@@ -12,6 +12,8 @@ class CreateMovies < ActiveRecord::Migration[5.1]
       t.integer :status, null: false
       t.integer :rate, null: false
       t.boolean :disabled, default: false
+      t.string :thumbnail
+      t.string :carousel
 
       t.timestamps
     end
