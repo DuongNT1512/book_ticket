@@ -67,6 +67,17 @@ en:
       help: "Help"
     article_item:
       views: "Views:"
+  shows:
+    index:
+      showtime: "Showtime"
+      select_movie: "Select Movie"
+      select_theater: "Select Theater"
+      select_session: "Select Session"
+      movie_not_found: "Movie not found!"
+      theater_not_found: "Theater not found!"
+  theaters:
+    index:
+      movie_not_found: "Movie not found!"
   shared:
     movie_item:
       book_now: "Book Now"
@@ -76,8 +87,11 @@ en:
       movie: "Select Movie"
       date: "Select Date"
       theater: "Select Theater"
-      show: "Select Show"
+      show: "Select Session"
       book: "Book"
+      session: "Session"
+    show_movie_item:
+      rated: "Rated"
   devise:
     confirmations:
       new:
@@ -135,3 +149,6 @@ en:
         title: "Resend unlock instructions"
         email: "Email"
         send_unlock: "Resend unlock instructions"
+  unexpected_error: "Unexpected Error! Try Again Later"
+  not_in_the_past: "can't be in the past"
+  not_before_start: "can't end before start"

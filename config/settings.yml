@@ -11,9 +11,9 @@ movie:
     - :ru
     - :cn
   status:
-    - :pending
-    - :airing
     - :archived
+    - :coming
+    - :playing
   rates:
     - :G
     - :PG

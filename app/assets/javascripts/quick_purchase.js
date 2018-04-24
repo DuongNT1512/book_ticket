@@ -4,7 +4,10 @@ $(document).on('turbolinks:load', function(){
   var theater_default_option = $('#quick-purchase-form .theater').html();
   var date_default_option = $('#quick-purchase-form .date').html();
   var show_default_option = $('#quick-purchase-form .show').html();
-  var movie_id, theater_id, dates_shows, date_index;
+  var movie_id, theater_id, shows_by_dates, date_index;
+  var theater_template = '<option value="{{:id}}" name="theater">{{:name}}</option>';
+  var date_template = '<option value="{{:index}}" name="date">{{:date}}</option>';
+  var show_template = '<option value="{{:id}}" name="show">{{:start}}</option>';
 
   $('#quick-purchase-form').on('change', '.movie', function(e){
     e.preventDefault();
@@ -15,11 +18,15 @@ $(document).on('turbolinks:load', function(){
 
     $.ajax({
       url: ajax_theaters_url,
-      type: 'post',
+      type: 'get',
       data: {movie_id: movie_id},
       dataType: 'json',
       success: function(data){
-        render_quick_purchase_theaters(data);
+        if(data.status){
+          render_quick_purchase_theaters(data.response);
+          return;
+        }
+        render_error(data.message);
       },
       error: function(){
         alert(I18n.t('unexpected_error'));
@@ -35,12 +42,16 @@ $(document).on('turbolinks:load', function(){
 
     $.ajax({
       url: ajax_shows_url,
-      type: 'post',
+      type: 'get',
       data: {theater_id: theater_id, movie_id: movie_id},
       dataType: 'json',
       success: function(data){
-        dates_shows = data;
-        render_quick_purchase_dates(dates_shows);
+        if(data.status){
+          shows_by_dates = data.response;
+          render_quick_purchase_dates(shows_by_dates);
+          return;
+        }
+        render_error(data.message);
       },
       error: function(){
         alert(I18n.t('unexpected_error'));
@@ -52,8 +63,7 @@ $(document).on('turbolinks:load', function(){
     e.preventDefault();
     $('#quick-purchase-form .show').html(show_default_option);
     date_index = $(this).val();
-
-    var shows = dates_shows[date_index][1];
+    var shows = shows_by_dates[date_index][1];
     render_quick_purchase_shows(shows);
   });
 
@@ -69,7 +79,7 @@ $(document).on('turbolinks:load', function(){
     for(var i = 0; i < theaters.length; i++){
       var theater = theaters[i];
       var data = [{name: theater.name, id: theater.id}];
-      var template = $.templates('#theater-item-template');
+      var template = $.templates(theater_template);
       var htmlOutput = template.render(data);
       $('.theater').append(htmlOutput);
     }
@@ -79,7 +89,7 @@ $(document).on('turbolinks:load', function(){
     for(var i = 0; i < dates_shows.length; i++){
       var date = dates_shows[i][0];
       var data = [{index: i, date: date}];
-      var template = $.templates('#date-item-template');
+      var template = $.templates(date_template);
       var htmlOutput = template.render(data);
       $('.date').append(htmlOutput);
     }
@@ -89,9 +99,13 @@ $(document).on('turbolinks:load', function(){
     for(var i = 0; i < shows.length; i++){
       var show = shows[i];
       var data = [{id: show.id, start: show.start_time, end: show.end_time}];
-      var template = $.templates('#show-item-template');
+      var template = $.templates(show_template);
       var htmlOutput = template.render(data);
       $('.show').append(htmlOutput);
     }
+  }
+
+  function render_error(message){
+    alert(message);
   }
 });

@@ -5,6 +5,10 @@ vi:
   male: "Nam"
   female: "Nữ"
   other: "Khác"
+  price: "%{price} USD"
+  time:
+    formats:
+      order_new_format: "%H:%M | %A, %e/%m/%Y"
   layouts:
     header:
       menu: "MENU"
@@ -67,6 +71,29 @@ vi:
       help: "Hỗ Trợ"
     article_item:
       views: "Lượt xem:"
+  shows:
+    index:
+      showtime: "Lịch Chiếu Phim"
+      select_movie: "Chọn Phim"
+      select_theater: "Chọn Rạp"
+      select_session: "Chọn Xuất"
+      movie_not_found: "Không tìm thấy phim"
+      theater_not_found: "Không tìm thấy rạp"
+  theaters:
+    index:
+      movie_not_found: "Không tìm thấy phim"
+  orders:
+    new:
+      title: "CHỌN GHẾ NGỒI"
+      screen: "Màn Hình"
+      normal_seat: "Ghế Thường"
+      selected_seat: "Ghế Được Chọn"
+      reserved_seat: "Ghế Đã Đặt"
+      theater: "Rạp"
+      show_start: "Giờ Chiếu"
+      seat: "Ghế"
+      price: "Giá"
+      confirm: "Xác Nhận"
   shared:
     movie_item:
       book_now: "Mua Ngay"
@@ -78,6 +105,9 @@ vi:
       theater: "Chọn Rạp"
       show: "Chọn Xuất"
       book: "Mua Vé"
+      session: "Xuất"
+    show_movie_item:
+      rated: "Rated"
   devise:
     confirmations:
       new:
@@ -135,3 +165,6 @@ vi:
         title: "Gửi Yêu Cầu Mở Khóa Tài Khoản"
         email: "Email"
         send_unlock: "Gửi"
+  unexpected_error: "Yêu cầu của bạn bị lỗi! Vui lòng thử lại sau"
+  not_in_the_past: "không thể trong quá khứ"
+  not_before_start: "không thể kết thúc trước khi bắt đầu"

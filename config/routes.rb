@@ -22,10 +22,6 @@ Rails.application.routes.draw do
     end
 
     resources :shows, only: :index
-
-    scope "/ajax" do
-      post "theaters", to: "ajax_theaters#index", as: :ajax_theaters
-      post "shows", to: "ajax_shows#index", as: :ajax_shows
-    end
+    resources :theaters, only: :index
   end
 end

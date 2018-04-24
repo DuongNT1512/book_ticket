@@ -6,6 +6,7 @@ exclude_paths:
   - 'db/migrate'
 
 UtilityFunction:
+  public_methods_only: true
   exclude:
     - "ApplicationController#default_url_options"
     - "ApplicationHelper#gender_selections"

@@ -89,13 +89,3 @@ end
 User.create! email: "root@awesome.com", password: "123456789",
   password_confirmation: "123456789", first_name: "admin", last_name: "admin",
   gender: :other, role: :admin, confirmed_at: Time.zone.now
-
-# Promotion seed
-promotion = Promotion.new
-promotion.name = "Test Promotion"
-promotion.start_date =  Time.zone.today
-promotion.end_date = Time.zone.today + 60
-promotion.description = Faker::Lorem.paragraph 30
-promotion.discount_type = :percentage
-promotion.discount_value = 10
-promotion.save!

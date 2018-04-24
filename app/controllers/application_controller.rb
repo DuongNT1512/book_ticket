@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_action :set_locale, :new_user, :airing_movies
+  before_action :set_locale, :new_user, :playing_movies
   before_action :configure_devise_permitted_params, if: :devise_controller?
 
   private
@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
     @user = User.new unless signed_in?
   end
 
-  def airing_movies
-    @movies = Movie.joins(:shows).merge(Show.today).airing.latest_order.uniq
+  def playing_movies
+    @movies = Movie.joins(:shows).merge(Show.today).playing.latest_order.uniq
   end
 
   def configure_devise_permitted_params

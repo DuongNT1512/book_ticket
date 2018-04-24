@@ -26,29 +26,54 @@
     border: 0;
     margin: 0;
     padding: 0;
-
   }
 
-  a:visited,
-  a:link {
-    color: $grey-900;
+  .movie-item {
+    cursor: pointer;
+
+    .title {
+      font-size: 18px;
+    }
   }
 
-  a:hover {
-    text-decoration: none;
+  .movie-rate {
+    h4 {
+      margin-bottom: 0;
+    }
 
-    div {
+    h6 {
+      margin-top: 0;
+    }
+  }
+
+  .theater-item {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .show-item {
+    border: 1px solid $orange-800;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+  }
+
+  .show-time {
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  .hover-item {
+    &:hover {
       background-color: $grey-100;
     }
   }
 
-  .active {
+  .selected {
     background-color: $grey-200;
     color: $orange-800;
-  }
-
-  .show-anchor {
-    border: 1px;
   }
 }
 
@@ -57,41 +82,4 @@
     margin: 0;
     padding: 0;
   }
-}
-
-.movie-item {
-  padding: 5px 0;
-}
-
-.movie-name {
-  .title {
-    font-size: 18px;
-  }
-}
-
-.movie-rate {
-  h4 {
-    margin-bottom: 0;
-  }
-
-  h6 {
-    margin-top: 0;
-  }
-}
-
-.theater-item {
-  font-size: 16px;
-  padding: 10px;
-}
-
-.show-item {
-  border: 1px solid $orange-800;
-  font-size: 16px;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-}
-
-.show-time {
-  margin-left: 30px;
-  margin-right: 10px;
 }
