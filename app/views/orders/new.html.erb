@@ -25,7 +25,7 @@
   </div>
   <div class="col-md-4">
     <div class="show-details">
-      <%= image_tag "http://via.placeholder.com/360x240" %>
+      <%= image_tag @movie_show.movie.thumbnail %>
       <h4><b><%= @movie_show.movie.name %></b></h4>
       <h4><b><%= @movie_show.movie.vietnamese %></b></h4>
       <p><b><%= t ".theater" %></b>:
@@ -37,9 +37,12 @@
       <div class="confirmation text-right">
         <%= link_to t(".confirm"), "#", class: "btn btn-success",
           id: "order-confirm" %>
-        <input type="hidden" id="show_id" name="show_id" value="<%= @movie_show.id %>">
-        <input type="hidden" id="order_create" name="order_create_url" value="<%= orders_path %>">
-        <input type="hidden" id="user_signin" name="user_signin" value="<%= true if user_signed_in? %>">
+        <input type="hidden" id="show_id" name="show_id"
+          value="<%= @movie_show.id %>">
+        <input type="hidden" id="order_create" name="order_create_url"
+          value="<%= orders_path %>">
+        <input type="hidden" id="user_signin" name="user_signin"
+          value="<%= true if user_signed_in? %>">
       </div>
     </div>
   </div>

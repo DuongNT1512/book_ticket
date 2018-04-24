@@ -1,6 +1,6 @@
 <div class="movie-item">
   <div class="movie-thumbnail">
-    <%= image_tag("http://via.placeholder.com/360x240") %>
+    <%= image_tag movie.thumbnail, class: "movie-item-thumbnail" %>
     <%= link_to "#", class: "link-no-decoration" do %>
       <div class="overlay">
         <p class="movie-description"><%= movie.description %></p>

@@ -71,6 +71,9 @@ en:
       help: "Help"
     article_item:
       views: "Views:"
+    carousel:
+      next: "Next"
+      previous: "Previous"
   shows:
     index:
       showtime: "Showtime"
