@@ -5,6 +5,10 @@ en:
   male: "Male"
   female: "Female"
   other: "Other"
+  price: "$%{price}"
+  time:
+    formats:
+      order_new_format: "%H:%M | %A, %e/%m/%Y"
   layouts:
     header:
       menu: "MENU"
@@ -78,6 +82,18 @@ en:
   theaters:
     index:
       movie_not_found: "Movie not found!"
+  orders:
+    new:
+      title: "SELECT YOUR SEAT"
+      screen: "Screen"
+      normal_seat: "Normal Seat"
+      selected_seat: "Selected Seat"
+      reserved_seat: "Reserved Seat"
+      theater: "Theater"
+      show_start: "Show Start"
+      seat: "Seat"
+      price: "Price"
+      confirm: "Book Ticket"
   shared:
     movie_item:
       book_now: "Book Now"

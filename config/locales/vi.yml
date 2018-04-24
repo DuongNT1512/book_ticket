@@ -93,7 +93,7 @@ vi:
       show_start: "Giờ Chiếu"
       seat: "Ghế"
       price: "Giá"
-      confirm: "Xác Nhận"
+      confirm: "Đặt Vé"
   shared:
     movie_item:
       book_now: "Mua Ngay"

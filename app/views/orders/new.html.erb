@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-8 seat-select-border">
+    <h3 class="seat-select-title"><%= t ".title" %></h3>
+    <div class="screen text-center"><%= t ".screen" %></div>
+    <div class="seat-map-wrapper">
+      <% for row in 1..@movie_show.screen.seat_rows %>
+        <div class="row-wrapper">
+          <ul class="seat-row">
+            <li><div class="mapper mapper-left text-center"><%= row %>
+              </div></li>
+            <% for column in 1..@movie_show.screen.seat_columns %>
+              <%= render "seat", row: row, column: column, show: @movie_show %>
+            <% end %>
+            <li><div class="mapper mapper-right text-center"><%= row %>
+              </div></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <div class="seat-color text-center">
+      <span class="normal-seat"><%= t ".normal_seat" %></span>
+      <span class="selected-seat"><%= t ".selected_seat" %></span>
+      <span class="reserved-seat"><%= t ".reserved_seat" %></span>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="show-details">
+      <%= image_tag "http://via.placeholder.com/360x240" %>
+      <h4><b><%= @movie_show.movie.name %></b></h4>
+      <h4><b><%= @movie_show.movie.vietnamese %></b></h4>
+      <p><b><%= t ".theater" %></b>:
+        <%= @movie_show.screen.name %> | <%= @movie_show.screen.theater.name %>
+      </p>
+      <p><b><%= t ".show_start" %></b>: <%= show_start_time %></p>
+      <p><b><%= t ".seat" %></b>: <span id="seat-codes"></span></p>
+      <p><b><%= t ".price" %></b>: <span id="price"></span></p>
+      <div class="confirmation text-right">
+        <%= link_to t(".confirm"), "#", class: "btn btn-success",
+          id: "order-confirm" %>
+      </div>
+    </div>
+  </div>
+</div>

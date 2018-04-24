@@ -1,0 +1,127 @@
+@import 'material-design-color';
+
+.seat-map-wrapper {
+  width: 100%;
+
+  .row-wrapper {
+    display: table;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+  }
+
+  .seat-row {
+    list-style: none;
+    margin: 5px;
+    padding-left: 0;
+    width: 100%;
+
+    li {
+      display: inline;
+      float: left;
+      margin: 0 5px;
+    }
+
+    .selected {
+      background-color: $green-200;
+    }
+
+    .reserved {
+      background-color: $blue-300;
+      cursor: not-allowed;
+    }
+  }
+
+  .seat {
+    background-color: $grey-200;
+    cursor: pointer;
+    height: 20px;
+    width: 25px;
+  }
+
+  .mapper {
+    background-color: $grey-50;
+    border-style: solid;
+    border-width: 1px;
+    color: $orange-800;
+    cursor: default;
+    height: 20px;
+    width: 25px;
+  }
+
+  .mapper-right {
+    margin-left: 40px;
+  }
+
+  .mapper-left {
+    margin-right: 40px;
+  }
+}
+
+.screen {
+  border-top: 5px solid $grey-500;
+  font-size: 18px;
+  margin: 30px auto;
+  padding-bottom: 20px;
+  width: 60%;
+}
+
+.seat-color {
+  margin: 20px auto;
+  width: 80%;
+
+  span {
+    margin: 0 20px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 10px;
+      margin-right: 5px;
+      width: 10px;
+    }
+  }
+
+  .normal-seat::before {
+    background-color: $grey-200;
+  }
+
+  .selected-seat::before {
+    background-color: $green-200;
+  }
+
+  .reserved-seat::before {
+    background-color: $blue-300;
+  }
+}
+
+.show-details {
+  background-color: $grey-100;
+  padding: 0 10px 10px;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .comfirmation {
+    margin: 0 20px;
+  }
+
+  p {
+    border-bottom: 1px dotted $grey-300;
+    padding: 5px 0;
+  }
+}
+
+.seat-select-border {
+  border: 7px solid $orange-800;
+  padding: 0;
+}
+
+.seat-select-title {
+  background-color: $orange-800;
+  color: $grey-50;
+  margin: 0;
+  padding: 15px 10px;
+}

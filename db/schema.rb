@@ -50,10 +50,8 @@ ActiveRecord::Schema.define(version: 20180413205514) do
     t.float "amount", null: false
     t.integer "status", null: false
     t.integer "user_id"
-    t.integer "promotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["promotion_id"], name: "index_orders_on_promotion_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
