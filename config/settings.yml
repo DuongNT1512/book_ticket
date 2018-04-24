@@ -49,7 +49,6 @@ user:
 
 order:
   status:
-    - pending
     - reserved
     - cancelled
     - succeeded
@@ -57,3 +56,4 @@ order:
 
 date_format: "%A, %e/%m/%Y"
 time_format: "%H:%M"
+order_datetime: "%H:%M | %a %d/%m/%y"

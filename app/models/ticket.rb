@@ -5,4 +5,11 @@ class Ticket < ApplicationRecord
   validates :seat_code, presence: true
   validates :show, presence: true
   validates :order, presence: true
+
+  scope :available, ->{where disabled: false}
+
+  def disable
+    self.disabled = true
+    save
+  end
 end

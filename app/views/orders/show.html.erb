@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="movie-description">
+        <div class="title"><h3><b><%= t ".title" %></b></h3></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="order-details">
+          <tr>
+            <td><b><%= t ".movie_name" %></b>:</td>
+            <td><%= @movie.name %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".movie_genres" %></b>:</td>
+            <td><%= movie_genres %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".movie_length" %></b>:</td>
+            <td><%= @movie.length %> minutes</td>
+          </tr>
+          <tr>
+            <td><b><%= t ".theater" %></b>:</td>
+            <td><%= theater_name %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".screen" %></b>:</td>
+            <td><%= screen_name %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".seat" %></b>:</td>
+            <td><%= seats %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".start_time" %></b>:</td>
+            <td><%= start_time %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".amount" %></b>:</td>
+            <td><%= @order.amount %> <%= t ".usd" %></td>
+          </tr>
+          <tr>
+            <td><b><%= t ".status" %></b>:</td>
+            <td id="order-status"><%= order_status %></td>
+          </tr>
+        </table>
+      </div>
+      </div>
+      <div class="row payment">
+        <% if @order.reserved? %>
+          <div class="col-md-6 pay-now paypal">
+            <input type="hidden" id="order-amount" value="<%= @order.amount %>">
+            <input type="hidden" id="order-id" value="<%= @order.id %>">
+            <input type="hidden" id="order-pay" value="<%= order_payments_path @order.id %>">
+            <div id="paypal-button"></div>
+          </div>
+        <% end %>
+        <div class="col-md-6 pay-now text-right">
+          <%= link_to t(".cancel_order"), order_path(@order), method: :delete,
+            class: "btn btn-danger", id: "cancel-order" if @order.reserved? %>
+          <%= link_to t(".okay"), root_path, class: "btn btn-default" %>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4 hidden-in-xs">
+    <%= render "shared/side_bar", form_movies: @movies,
+      movies: first_n_movies(Settings.movie.movie_sidebar) %>
+  </div>
+</div>

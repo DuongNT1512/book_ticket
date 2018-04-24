@@ -37,5 +37,38 @@ $(document).on('turbolinks:load', function(){
 
   $('#order-confirm').on('click', function(e){
     e.preventDefault();
+    var show_id = $('input#show_id').val();
+    var url = $('input#order_create').val();
+    var user_signin = $('input#user_signin').val();
+
+    if (seats.length == 0){
+      return;
+    }
+
+    if (user_signin == 'true') {
+      $.ajax({
+        url: url,
+        type: 'post',
+        data: {seats: seats, show_id: show_id},
+        dataType: 'json',
+        success: function(data){
+          if(data.status == 'success'){
+            var order_id = data.order;
+            window.location.href = url + '/' + order_id;
+          }
+          else {
+            alert(I18n.t('unexpected_error'));
+          }
+        },
+        error: function(){
+          alert(I18n.t('unexpected_error'));
+        }
+      });
+    }
+    else {
+      $('#login-modal').modal('show');
+      $('#signin-error').html(I18n.t('order_signin_warning'));
+      $('.signin-error').show();
+    }
   });
 });

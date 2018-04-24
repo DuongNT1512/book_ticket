@@ -94,6 +94,33 @@ vi:
       seat: "Ghế"
       price: "Giá"
       confirm: "Đặt Vé"
+    show:
+      title: "Thông Tin Đặt Vé"
+      movie_name: "Tên Phim"
+      movie_genres: "Thể Loại"
+      movie_length: "Độ Dài"
+      minutes: "phút"
+      theater: "Rạp"
+      screen: "Phòng Chiếu"
+      seat: "Ghế"
+      start_time: "Bắt Đầu"
+      amount: "Giá Tiền"
+      status: "Tình Trạng Đặt Vé"
+      reserved: "Đã Đặt"
+      cancelled: "Đã Hủy"
+      succeeded: "Đã Mua"
+      failed: "Thất Bại"
+      cancel_order: "Hủy Đơn"
+      okay: "Xác Nhận"
+      usd: "USD"
+    create:
+      reserved: "Bạn đã đăt vé thành công! Bạn có thể xem thông tin như bên dưới"
+      confirm: "Xác Nhận"
+    destroy:
+      cancelled: "Bạn đã hủy vé thành công!"
+  payments:
+    create:
+      paid: "Mua vé thành công!"
   shared:
     movie_item:
       book_now: "Mua Ngay"
@@ -165,6 +192,31 @@ vi:
         title: "Gửi Yêu Cầu Mở Khóa Tài Khoản"
         email: "Email"
         send_unlock: "Gửi"
+  order_mailer:
+    send_notification_mail:
+      subject: "Thông Báo Đặt Vé"
+    order_reserved:
+      title: "Thông Báo Đặt Vé"
+      greeting: "Xin Chào"
+      notify: "Chúng tôi muốn thông báo với bạn rằng vé của bạn đã được đặt thành công"
+      link_below: "Thông tin chi tiết ở link bên dưới"
+      order_link: "Thông tin đơn hàng"
+      thank_you: "Cảm ơn đã sử dụng dịch vụ của AwesomeCinema"
+    order_purchased:
+      title: "Thông Báo Mua Vé"
+      greeting: "Xin Chào"
+      notify: "Chúng tôi muốn thông báo với bạn rằng vé của bạn đã được thanh toán thành công"
+      link_below: "Thông tin chi tiết ở link bên dưới"
+      order_link: "Thông tin đơn hàng"
+      thank_you: "Cảm ơn đã sử dụng dịch vụ của AwesomeCinema"
+    order_cancelled:
+      title: "Thông Báo Hủy Vé"
+      greeting: "Xin Chào"
+      notify: "Chúng tôi muốn thông báo với bạn rằng vé của bạn đã được hủy thành công"
+      link_below: "Thông tin chi tiết ở link bên dưới"
+      order_link: "Thông tin đơn hàng"
+      thank_you: "Cảm ơn đã sử dụng dịch vụ của AwesomeCinema"
   unexpected_error: "Yêu cầu của bạn bị lỗi! Vui lòng thử lại sau"
   not_in_the_past: "không thể trong quá khứ"
   not_before_start: "không thể kết thúc trước khi bắt đầu"
+  order_signin_warning: "Bạn cần đăng nhập để mua vé"

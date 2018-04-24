@@ -37,6 +37,9 @@
       <div class="confirmation text-right">
         <%= link_to t(".confirm"), "#", class: "btn btn-success",
           id: "order-confirm" %>
+        <input type="hidden" id="show_id" name="show_id" value="<%= @movie_show.id %>">
+        <input type="hidden" id="order_create" name="order_create_url" value="<%= orders_path %>">
+        <input type="hidden" id="user_signin" name="user_signin" value="<%= true if user_signed_in? %>">
       </div>
     </div>
   </div>

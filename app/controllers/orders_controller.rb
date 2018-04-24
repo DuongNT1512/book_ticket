@@ -1,19 +1,57 @@
 class OrdersController < ApplicationController
-  attr_reader :movie_show
+  attr_reader :movie_show, :order, :seats
 
   before_action :check_show_param, only: :new
+  before_action :authenticate_user!, only: %i(create show)
+  before_action :find_movie_show, only: %i(new create)
+  before_action :find_order, only: %i(show destroy)
 
   def new
-    @movie_show = Show.find_by id: params[:show_id]
     @layout = JSON.parse movie_show.screen.layout
-    @reserved_seats = movie_show.tickets.map(&:seat_code)
   end
 
-  def create; end
+  def create
+    @order = Order.new amount: order_price, status: :reserved,
+      user: current_user
+    return render json: {status: "failed"} unless order.save
+    save_order_successful
+  end
+
+  def show
+    @movie = order.tickets.first.show.movie
+  end
+
+  def destroy
+    order.cancel
+    order.send_cancelled_email current_user
+    flash[:success] = t ".cancelled"
+    redirect_to order_path(order)
+  end
 
   private
 
   def check_show_param
     render "shows/index" if params[:show_id].blank?
+  end
+
+  def order_price
+    params[:seats].count * movie_show.ticket_price
+  end
+
+  def save_order_successful
+    params[:seats].each do |code|
+      Ticket.create! seat_code: code, show: movie_show, order: order
+    end
+    flash[:success] = t ".reserved"
+    order.send_reserved_email current_user
+    render json: {status: "success", order: order.id}
+  end
+
+  def find_movie_show
+    @movie_show = Show.find_by id: params[:show_id]
+  end
+
+  def find_order
+    @order = Order.find_by id: params[:id]
   end
 end

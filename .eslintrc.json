@@ -6,6 +6,7 @@
   "globals": {
     "window": true,
     "$clamp": true,
+    "paypal": true,
     "I18n": true
   },
 

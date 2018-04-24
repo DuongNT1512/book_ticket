@@ -5,6 +5,8 @@ class User < ApplicationRecord
   enum gender: Settings.user.genders
   enum role: Settings.user.roles
 
+  has_many :order, dependent: :destroy
+
   validates :first_name, presence: true,
     length: {maximum: Settings.user.max_first}
   validates :last_name, presence: true,
