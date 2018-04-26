@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     resources :orders, only: %i(new create show destroy) do
       resources :payments, only: :create
     end
+    resources :movies, only: %i(index show)
   end
 end

@@ -1,0 +1,21 @@
+<div class="row movie-index">
+  <ul class="movie-index-tab-control">
+    <li class="movie-index-tab active" id="playing-movies"><%= t ".playing_movies" %></li>
+    <li class="movie-index-tab" id="coming-movies"><%= t ".coming_movies" %></li>
+  </ul>
+
+  <div class="playing-movies">
+    <% @playing_movies.each do |movie| %>
+      <div class="col-md-3 movie-item">
+        <%= render "movie_item", movie: movie %>
+      </div>
+    <% end %>
+  </div>
+  <div class="coming-movies">
+    <% @coming_movies.each do |movie| %>
+      <div class="col-md-3 movie-item">
+        <%= render "movie_item", movie: movie %>
+      </div>
+    <% end %>
+  </div>
+</div>

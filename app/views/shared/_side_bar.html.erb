@@ -6,5 +6,10 @@
     <% for movie in movies do %>
       <%= render "shared/movie_item", movie: movie %>
     <% end %>
+    <% if more_than? Settings.movie.movie_sidebar %>
+      <div class="row text-right">
+        <%= link_to t(".show_more"), "#", class: "link-btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
